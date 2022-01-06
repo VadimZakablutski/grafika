@@ -4,10 +4,12 @@ def kliker(event):
     global klik
     klik+=1
     lbl.configure(text=klik)
+    okno.geometry(str(okno.winfo_width()+10)+"x"+str(okno.winfo_height()+10))
 def kliker_minus(event):
     global klik
     klik-=1
     lbl.configure(text=klik)
+    okno.geometry(str(okno.winfo_width()-10)+"x"+str(okno.winfo_height()-10))
 def kliks(event):
     global klik
     klik=0
@@ -23,8 +25,7 @@ def valik(event):
     txt.delete(0,valik)
     txt.insert(0,valik)
 def Destroy(event):
-    raise SystemExit
-
+    okno.destroy()
 okno=Tk()#создает окно
 okno.title("Okno")#изменяет название окна
 okno.geometry("400x500")#меняет размеры окна
